@@ -1,0 +1,15 @@
+.wrapper {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 100%;
+}
+
+.inner {
+    height: var(--default-layout-header-height);
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+}

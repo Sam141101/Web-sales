@@ -3,10 +3,20 @@
 
 :root {
     --primary: #fe2c55;
+    --text-color: #5e5a54;
+
+    --color-active: #5fbd74;
+
+    --default-layout-topbar-height: 50px;
+    --default-layout-width: 1140px;
+    --default-layout-padding-topbar-spacer: 15px;
+    --default-layout-header-height: 140px;
 }
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -14,8 +24,30 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.6rem;
+    // font-family: 'Lato', sans-serif;
+    // font-size: 1.5rem;
+    // line-height: 1.6;
+    // text-rendering: optimizespeed;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0em;
     line-height: 1.5;
-    text-rendering: optimizespeed;
+    color: #5e5a54;
+    font-size: 1.6rem;
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-family: 'Lato', sans-serif;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    // transition: all 0.5s;
 }

@@ -1,0 +1,15 @@
+.wrapper {
+    width: var(--default-layout-width);
+    padding: 0 var(--default-layout-padding-topbar-spacer);
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
