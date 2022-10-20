@@ -9,6 +9,7 @@ import { Menu, MenuItem } from '~/components/Menu';
 
 import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -43,8 +44,19 @@ function HeaderCenter({ items }) {
                     // >
                     // <Menu item={handle(item)}>
                     <Menu item={item} key={index}>
-                        <div key={index}>
-                            <MenuItem data={item} key={item.id} />
+                        <div key={index} className={cx('height')}>
+                            {/* {!!item.type && <Image alt={item.alt} className={cx('user-avatar')} src={item.src} />} */}
+                            {/* <MenuItem data={item} key={item.id} /> */}
+
+                            {item.type ? (
+                                <>
+                                    <Image className={cx('user-avatar')} alt={item.alt} src={item.src} />
+                                </>
+                            ) : (
+                                <>
+                                    <MenuItem data={item} key={item.id} />
+                                </>
+                            )}
                         </div>
                     </Menu>
                     // </Menu>

@@ -8,6 +8,7 @@ import TopBar from '~/components/TopBar';
 import HeaderLeft from '../HeaderLeft';
 import HeaderCenter from '../HeaderCenter';
 import HeaderRight from '../HeaderRight';
+import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
@@ -156,19 +157,25 @@ const MENU_ITEMS = [
     //         ],
     //     },
     // },
-    // {
-    //     id: 3,
-    //     type: 'text',
-    //     to: '/shortcodes',
-    //     content: 'Shortcodes',
-    // },
-    // {
-    // id:4,
-    //     type: 'image',
-    //     to: '/vi',
-    //     content: 'Tiếng Việt',
-    //     icon: <FontAwesomeIcon icon={faAngleDown} />,
-    // },
+    {
+        id: 3,
+        flag: true,
+        type: false,
+        green: false,
+        to: '/shortcodes',
+        content: 'Shortcodes',
+    },
+
+    {
+        id: 4,
+        type: true,
+        flag: true,
+        src: images.logo,
+        alt: 'Trang chu',
+        to: '/vi',
+        green: false,
+    },
+
     // {
     //     id: 5,
     //     type: 'text',
@@ -183,17 +190,11 @@ const MENU_ITEMS = [
     //     content: 'Shop',
     //     icon: <FontAwesomeIcon icon={faAngleDown} />,
     // },
-    // {
-    //     id: 7,
-    //     type: 'text',
-    //     to: '/blog',
-    //     content: 'Blog',
-    //     icon: <FontAwesomeIcon icon={faAngleDown} />,
-    // },
 
     {
         id: 7,
-        type: 'text',
+        green: false,
+        type: false,
         to: '/blog',
         content: 'Blog',
         icon: <FontAwesomeIcon icon={faAngleDown} />,
