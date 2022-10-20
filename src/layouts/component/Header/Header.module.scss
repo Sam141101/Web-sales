@@ -11,5 +11,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
+    // background-color: red;
+    position: relative;
+}
+
+.header-type {
+    width: var(--default-layout-width);
+    height: 100%;
+    position: relative;
 }

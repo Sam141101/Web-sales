@@ -230,9 +230,11 @@ function Header() {
         <header className={cx('wrapper')}>
             <TopBar items={Languages_item} />
             <div className={cx('inner')}>
-                {/* <HeaderLeft /> */}
-                <HeaderCenter items={MENU_ITEMS} />
-                {/* <HeaderRight /> */}
+                <div className={cx('header-type')}>
+                    <HeaderLeft />
+                    <HeaderCenter items={MENU_ITEMS} />
+                    <HeaderRight />
+                </div>
             </div>
         </header>
     );
