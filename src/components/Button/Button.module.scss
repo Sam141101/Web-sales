@@ -15,6 +15,40 @@
     }
 }
 
+.active {
+    padding: 15px 0 !important;
+    justify-content: space-between;
+    text-transform: none;
+    font-weight: 400;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #f1eeea;
+    letter-spacing: 0.05em;
+    position: relative;
+    transition: all 0.5s;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &:hover {
+        color: var(--color-active);
+        padding-left: 20px !important;
+
+        ::before {
+            content: '';
+            width: 10px;
+            height: 0.5px;
+            background: var(--color-active);
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            // opacity: 0;
+        }
+    }
+}
+
 .icon {
     display: inline-block;
     font-size: 1.2rem;
@@ -40,4 +74,24 @@
     // background-color: var(--primary);
     color: var(--color-active);
     // border-color: var(--primary);
+}
+
+.smallFlagTitle {
+    background: #fe5b34;
+    background: linear-gradient(90deg, #fe5b34 0%, #fe378c 100%, #fe378c 100%);
+
+    font-size: 7px;
+    text-transform: uppercase;
+    height: 12px;
+    line-height: 12px;
+    padding: 0 5px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 3px;
+    // margin-left: 2px;
+    font-weight: 700;
+}
+
+.color {
+    background: #5fbd74 !important;
 }

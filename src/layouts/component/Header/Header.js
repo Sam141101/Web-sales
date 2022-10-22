@@ -26,137 +26,140 @@ const Languages_item = [
 ];
 
 const MENU_ITEMS = [
-    // {
-    //     id: 1,
-    //     type: 'text',
-    //     to: '/',
-    //     green: true,
-    //     content: 'Home',
-    //     icon: <FontAwesomeIcon icon={faAngleDown} />,
-    //     children: {
-    //         title: 'more',
-    //         data: [
-    //             {
-    //                 id: 1,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: 'Organik Main',
-    //             },
+    {
+        id: 1,
+        type: false,
+        wrapper: false,
+        to: '/',
+        green: true,
+        content: 'Home',
+        icon: <FontAwesomeIcon icon={faAngleDown} />,
+        children: {
+            title: 'more',
+            data: [
+                {
+                    id: 1,
+                    type: 'language',
+                    to: '/en',
+                    content: 'Organik Main',
+                },
 
-    //             {
-    //                 id: 2,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: 'Organik Fresh',
-    //             },
-    //             {
-    //                 id: 3,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: 'Organik Shop',
-    //             },
-    //             {
-    //                 id: 4,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: 'Organik Store',
-    //             },
+                {
+                    id: 2,
+                    type: 'language',
+                    to: '/en',
+                    content: 'Organik Fresh',
+                },
+                {
+                    id: 3,
+                    type: 'language',
+                    to: '/en',
+                    content: 'Organik Shop',
+                },
+                {
+                    id: 4,
+                    type: 'language',
+                    to: '/en',
+                    content: 'Organik Store',
+                },
 
-    //             {
-    //                 id: 5,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: 'Organik Farm',
-    //             },
+                {
+                    id: 5,
+                    type: 'language',
+                    to: '/en',
+                    content: 'Organik Farm',
+                },
 
-    //             {
-    //                 id: 6,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: 'Organik House',
-    //                 title: 'New',
-    //             },
-    //             {
-    //                 id: 7,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: 'Go Green',
-    //                 title: 'New',
-    //             },
+                {
+                    id: 6,
+                    type: 'language',
+                    to: '/en',
+                    content: 'Organik House',
+                    title: 'New',
+                },
+                {
+                    id: 7,
+                    type: 'language',
+                    to: '/en',
+                    content: 'Go Green',
+                    title: 'New',
+                },
 
-    //             {
-    //                 id: 8,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: 'Organik Healthy',
-    //                 title: 'New',
-    //             },
-    //         ],
-    //     },
-    // },
+                {
+                    id: 8,
+                    type: 'language',
+                    to: '/en',
+                    content: 'Organik Healthy',
+                    title: 'New',
+                },
+            ],
+        },
+    },
 
-    // {
-    //     id: 2,
-    //     type: 'text',
-    //     to: '/pages',
-    //     content: 'Pages',
-    //     icon: <FontAwesomeIcon icon={faAngleDown} />,
-    //     children: {
-    //         title: 'more',
-    //         data: [
-    //             {
-    //                 id: 1,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: 'About Us',
-    //                 children: {
-    //                     title: 'more',
-    //                     data: [
-    //                         {
-    //                             type: 'language',
-    //                             to: '/en',
-    //                             content: 'About Us - 1',
-    //                         },
+    {
+        id: 2,
+        type: false,
+        wrapper: false,
+        to: '/pages',
+        content: 'Pages',
+        icon: <FontAwesomeIcon icon={faAngleDown} />,
+        children: {
+            title: 'more',
+            data: [
+                {
+                    id: 1,
+                    type: 'language',
+                    to: '/en',
+                    content: 'About Us',
+                    children: {
+                        title: 'more',
+                        data: [
+                            {
+                                type: 'language',
+                                to: '/en',
+                                content: 'About Us - 1',
+                            },
 
-    //                         {
-    //                             type: 'language',
-    //                             to: '/en',
-    //                             content: 'About Us - 2',
-    //                         },
-    //                     ],
-    //                 },
-    //             },
+                            {
+                                type: 'language',
+                                to: '/en',
+                                content: 'About Us - 2',
+                            },
+                        ],
+                    },
+                },
 
-    //             {
-    //                 id: 2,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: 'Contact',
-    //             },
+                {
+                    id: 2,
+                    type: 'language',
+                    to: '/en',
+                    content: 'Contact',
+                },
 
-    //             {
-    //                 id: 3,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: 'Gallery Freestyle',
-    //             },
+                {
+                    id: 3,
+                    type: 'language',
+                    to: '/en',
+                    content: 'Gallery Freestyle',
+                },
 
-    //             {
-    //                 id: 4,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: 'Gallery Grid',
-    //             },
+                {
+                    id: 4,
+                    type: 'language',
+                    to: '/en',
+                    content: 'Gallery Grid',
+                },
 
-    //             {
-    //                 id: 4,
-    //                 type: 'language',
-    //                 to: '/en',
-    //                 content: '404',
-    //             },
-    //         ],
-    //     },
-    // },
+                {
+                    id: 4,
+                    type: 'language',
+                    to: '/en',
+                    content: '404',
+                },
+            ],
+        },
+    },
+
     {
         id: 3,
         flag: true,
@@ -176,23 +179,53 @@ const MENU_ITEMS = [
         green: false,
     },
 
-    // {
-    //     id: 5,
-    //     type: 'text',
-    //     to: '/features',
-    //     content: 'Features',
-    //     icon: <FontAwesomeIcon icon={faAngleDown} />,
-    // },
-    // {
-    //     id: 6,
-    //     type: 'text',
-    //     to: '/shop',
-    //     content: 'Shop',
-    //     icon: <FontAwesomeIcon icon={faAngleDown} />,
-    // },
+    {
+        id: 5,
+        type: false,
+        wrapper: true,
+        to: '/features',
+        num: true,
+        content: 'Features',
+        icon: <FontAwesomeIcon icon={faAngleDown} />,
+    },
+
+    {
+        id: 6,
+        type: false,
+        wrapper: true,
+        num: false,
+        to: '/shop',
+        content: 'Shop',
+        icon: <FontAwesomeIcon icon={faAngleDown} />,
+        // children: {
+        //     title: 'more',
+        //     data: [
+        //         {
+        //             id: 1,
+        //             type: 'language',
+        //             to: '/en',
+        //             content: 'Blog List',
+        //         },
+
+        //         {
+        //             id: 2,
+        //             type: 'language',
+        //             to: '/en',
+        //             content: 'Blog Classic',
+        //         },
+        //         {
+        //             id: 3,
+        //             type: 'language',
+        //             to: '/en',
+        //             content: 'Blog Masonry',
+        //         },
+        //     ],
+        // },
+    },
 
     {
         id: 7,
+        wrapper: false,
         green: false,
         type: false,
         to: '/blog',

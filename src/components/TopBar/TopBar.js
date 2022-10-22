@@ -36,7 +36,7 @@ function TopBar({ items = [] }) {
                 <div className={cx('action-left')}>
                     <Tippy
                         placement="bottom"
-                        offset={[0, 13]}
+                        offset={[0, 0]}
                         delay={[0, 500]}
                         // visible
                         interactive

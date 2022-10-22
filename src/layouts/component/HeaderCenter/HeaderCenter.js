@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './HeaderCenter.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faHeart, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import Button from '~/components/Button';
 import { Menu, MenuItem } from '~/components/Menu';
@@ -45,9 +45,6 @@ function HeaderCenter({ items }) {
                     // <Menu item={handle(item)}>
                     <Menu item={item} key={index}>
                         <div key={index} className={cx('height')}>
-                            {/* {!!item.type && <Image alt={item.alt} className={cx('user-avatar')} src={item.src} />} */}
-                            {/* <MenuItem data={item} key={item.id} /> */}
-
                             {item.type ? (
                                 <>
                                     <Image className={cx('user-avatar')} alt={item.alt} src={item.src} />
@@ -62,6 +59,20 @@ function HeaderCenter({ items }) {
                     // </Menu>
                 ))}
                 {/* </Tippy> */}
+            </div>
+
+            <div className={cx('btn-wrap')}>
+                <div className={cx('btn-wrap-inner')}>
+                    {/* <div className={cx('top-search-btn')}></div> */}
+                    <FontAwesomeIcon className={cx('top-search-btn')} icon={faSearch} />
+                    <div className={cx('wishlist-wrap')} data-count="21">
+                        <Button
+                            className={cx('wishlist-wrap-icon')}
+                            to="/"
+                            leftIcon={<FontAwesomeIcon className={cx('wishlist-wrap-icon')} icon={faHeart} />}
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );
