@@ -9,6 +9,7 @@ import Button from '../Button';
 import Image from '~/components/Image';
 import images from '~/assets/images';
 import MegaItem from '~/components/MegaItem';
+import ListItem from '~/components/ListItem';
 
 const cx = classNames.bind(styles);
 
@@ -32,7 +33,15 @@ function Menu({ children, item }) {
             {item.wrapper ? (
                 <>
                     <Wrapper wrapperbig className={cx('padding-left-1', 'center')}>
-                        <MegaItem />
+                        {item.list ? (
+                            <>
+                                <ListItem />
+                            </>
+                        ) : (
+                            <>
+                                <MegaItem />
+                            </>
+                        )}
                     </Wrapper>
                 </>
             ) : (
