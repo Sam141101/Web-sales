@@ -7,50 +7,33 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button';
 import Tippy from '@tippyjs/react/headless';
 import { Link } from 'react-router-dom';
+import Image from '../Image';
+import images from '~/assets/images';
+import PolicyItem from '~/components/PolicyItem';
+import Login from '~/components/Login';
+import Cart from '~/components/Cart';
 
 const cx = classNames.bind(styles);
 
-function TopBar({ items = [] }) {
-    const renderItems = () => {
-        return items.map((item, index) => {
-            return (
-                <div className={cx('language-item')} key={index}>
-                    <Link to={item.to} className={cx('item')}>
-                        {item.title}
-                    </Link>
-                </div>
-            );
-        });
-    };
-
-    const renderResult = (attrs) => (
-        <div className={cx('language-list')} tabIndex="-1" {...attrs}>
-            <div>{renderItems()}</div>
-        </div>
-    );
-
+function TopBar() {
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('inner')}>
-                <div className={cx('actions')}>Work time: Monday - Friday: 08AM-06PM</div>
-                <div className={cx('action-left')}>
-                    <Tippy
-                        placement="bottom"
-                        offset={[0, 0]}
-                        delay={[0, 500]}
-                        // visible
-                        interactive
-                        render={renderResult}
-                    >
-                        <div>
-                            <Button className={cx('actions')} rightIcon={<FontAwesomeIcon icon={faAngleDown} />}>
-                                Languages
-                            </Button>
-                        </div>
-                    </Tippy>
-                    <Button href="https://www.facebook.com/huy.sang.1232" className={cx('actions', 'pdr0')}>
-                        Login / Register
+            <div className={cx('container-fluid')}>
+                <div className={cx('flexContainer-header')}>
+                    <Button to="/" className={cx('pd15')}>
+                        <Image className={cx('logo-shop')} alt="Logo_Shop" src={images.shop} />
                     </Button>
+
+                    <PolicyItem />
+
+                    <div className={cx('login-cart')}>
+                        <div className={cx('login-wrap')}>
+                            <Login />
+                        </div>
+                        <div className={cx('login-wrap')}>
+                            <Cart />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

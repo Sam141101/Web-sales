@@ -1,0 +1,29 @@
+/* Mobile & tablet */
+@media (min-width: 1200px) {
+    :root {
+    }
+
+    .container-fluid {
+        max-width: 1600px;
+        padding: 0 85px;
+    }
+
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+
+    // .header {
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     z-index: 10;
+    // }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+}

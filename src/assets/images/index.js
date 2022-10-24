@@ -1,8 +1,10 @@
 const images = {
     // logo: require('~/assets/images/logo.svg').default,
-    logo: require('~/assets/images/logo_dark.png'),
-    megamenu: require('~/assets/images/megamenu_ads.jpg'),
-    about: require('~/assets/images/about-pic-01.png'),
+    shop: require('~/assets/images/logo_shop.webp'),
+    phone: require('~/assets/images/logo_phone.webp'),
+    delivery: require('~/assets/images/logo_delivery.webp'),
+    policy: require('~/assets/images/logo_policy.webp'),
+    noSign: require('~/assets/images/no-sign.png'),
 };
 
 export default images;

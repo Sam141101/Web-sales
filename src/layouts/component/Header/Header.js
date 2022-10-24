@@ -9,6 +9,7 @@ import HeaderLeft from '../HeaderLeft';
 import HeaderCenter from '../HeaderCenter';
 import HeaderRight from '../HeaderRight';
 import images from '~/assets/images';
+import HeaderItem from '~/components/HeaderItem';
 
 const cx = classNames.bind(styles);
 
@@ -263,14 +264,16 @@ const MENU_ITEMS = [
 function Header() {
     return (
         <header className={cx('wrapper')}>
-            <TopBar items={Languages_item} />
-            <div className={cx('inner')}>
+            <TopBar />
+            <HeaderItem />
+
+            {/* <div className={cx('inner')}>
                 <div className={cx('header-type')}>
                     <HeaderLeft />
                     <HeaderCenter items={MENU_ITEMS} />
                     <HeaderRight />
                 </div>
-            </div>
+            </div> */}
         </header>
     );
 }

@@ -1,0 +1,38 @@
+.wrapper {
+    background: #ffffff;
+    // padding: 15px 0;
+}
+
+.container-fluid {
+    max-width: 1600px;
+    padding: 0 85px;
+    // padding-right: 15px;
+    // padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.menu-list {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    width: 75%;
+}
+
+.list-item {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 0;
+    margin-right: 27px;
+    padding: 10px 0 15px;
+    color: #000000;
+}
+
+.active {
+    border-bottom: 2px solid #5c5c5c;
+}
