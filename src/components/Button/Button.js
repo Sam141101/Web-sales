@@ -43,22 +43,13 @@ function Button({
         [className]: className,
     });
 
-    const title = cx({
-        smallFlagTitle,
-        color,
+    const title = cx('icon', {
+        // icon
     });
-
-    // let title = cx({falg ? smallFlagTitle : bigFlagTitle})
-
-    // if(falg) {
-    //     title = cx('smallFlagTitle')
-    // } else {
-    //     title = cx('bigFlagTitle')
-    // }
 
     return (
         <Comp className={classes} {...props}>
-            {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
+            {leftIcon && <span className={cx(title)}>{leftIcon}</span>}
             <span className={cx('title')}>{children}</span>
             {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
             {flagTitle && <span className={title}>{flagTitle}</span>}

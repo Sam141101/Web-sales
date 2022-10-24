@@ -1,12 +1,11 @@
 .wrapper {
-    // background: #fff;
-    background: red;
+    background: #fff;
     max-height: min((100vh - 96px) - 60px, 734px);
 
     width: max-content;
     position: absolute;
     z-index: 999;
-    min-width: 120px;
+    min-width: 110px;
     box-shadow: 2px 4px 12px rgb(0 0 0 / 10%);
 
     // transform: rotate3d(1, 0, 0, -90deg);

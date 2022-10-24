@@ -34,7 +34,6 @@ const ITEM_POLICY = [
 ];
 
 function PolicyItem() {
-    console.log(ITEM_POLICY);
     return (
         <div className={cx('wrapper', 'pd15')}>
             <>

@@ -1,8 +1,10 @@
 import classNames from 'classnames/bind';
-import styles from './Menu.module.scss';
+import styles from './ShopList.module.scss';
+
+import Tippy from '@tippyjs/react/headless';
 
 import Button from '../Button';
-import Image from '~/components/Image';
+import Wrapper from '../Popper/Wrapper';
 
 const cx = classNames.bind(styles);
 
@@ -11,28 +13,40 @@ function MenuItem({ data }) {
         green: data.green,
     });
 
-    let value = data.type;
+    const renderItems = () => {
+        return (
+            <div className={cx('menu')}>
+                {data.map((dt, index) => {
+                    return (
+                        // <ShopList>
+                        <div className={cx('menu-list')}>
+                            <Button className={cx('custom')} key={index} to={dt.to}>
+                                {dt.content}
+                            </Button>
+                        </div>
+                        // </ShopList>
+                    );
+                })}
+            </div>
+        );
+    };
 
-    console.log(value);
+    const renderResult = (attrs) => (
+        <div tabIndex="-1" {...attrs}>
+            <Wrapper>{renderItems()}</Wrapper>
+        </div>
+    );
 
     return (
-        <Button className={classes} rightIcon={data.icon} to={data.to}>
-            {data.content}
-        </Button>
+        <Tippy interactive render={renderResult} offset={[0, -1]} placement="bottom-start">
+            <Button className={classes} rightIcon={data.icon} to={data.to}>
+                {data.content}
+            </Button>
 
-        // <>
-        //     {value ? (
-        //         <>
-        //             <Image alt={data.alt} src={data.src} />
-        //         </>
-        //     ) : (
-        //         <>
-        //             <Button className={classes} rightIcon={data.icon} to={data.to}>
-        //                 {data.content}
-        //             </Button>
-        //         </>
-        //     )}
-        // </>
+            {/* <Button className={cx('custom')} rightIcon={dt.icon} key={index} to={dt.to}>
+                                {dt.content}
+                            </Button> */}
+        </Tippy>
     );
 }
 

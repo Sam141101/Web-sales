@@ -2,7 +2,14 @@ import classNames from 'classnames/bind';
 import styles from './HeaderItem.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faAngleRight, faMagnet, faMinus, faRocket } from '@fortawesome/free-solid-svg-icons';
+import {
+    faAngleDown,
+    faAngleRight,
+    faAnglesRight,
+    faMagnet,
+    faMinus,
+    faRocket,
+} from '@fortawesome/free-solid-svg-icons';
 
 import Button from '../Button';
 import Image from '~/components/Image';

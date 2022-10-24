@@ -12,50 +12,34 @@ import images from '~/assets/images';
 const cx = classNames.bind(styles);
 
 function ShopList({ children, item }) {
+    const value = item;
+
     const renderItems = () => {
         return (
-            <>
-                {item.map((dt, index) => {
+            <div className={cx('menu')}>
+                {value.map((dt, index) => {
                     return (
-                        <Button active key={index} to={dt.to}>
-                            {dt.content}
-                        </Button>
+                        // <ShopList>
+                        <div className={cx('menu-list')}>
+                            <Button className={cx('custom')} rightIcon={dt.icon} key={index} to={dt.to}>
+                                {dt.content}
+                            </Button>
+                        </div>
+                        // </ShopList>
                     );
                 })}
-            </>
+            </div>
         );
     };
 
-    console.log(item[0]);
-
     const renderResult = (attrs) => (
-        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+        <div tabIndex="-1" {...attrs}>
             <Wrapper>{renderItems()}</Wrapper>
         </div>
     );
     return (
         <div>
-            <Tippy
-                interactive
-                visible
-                placement="bottom-start"
-                offset={[0, 0]}
-                render={(attrs) => (
-                    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                        <Wrapper>
-                            <h4 className={cx('text')}>Accounts</h4>
-                            {/* <AccountItem />
-                        <AccountItem />
-                        <AccountItem />
-                        <AccountItem /> */}
-                        </Wrapper>
-                    </div>
-                )}
-            >
-                {/* {children} */}
-            </Tippy>
-
-            <Tippy interactive visible render={renderResult} offset={[0, 0]} placement="bottom-start">
+            <Tippy interactive visible render={renderResult} offset={[0, -1]} placement="bottom-start">
                 {children}
             </Tippy>
         </div>
