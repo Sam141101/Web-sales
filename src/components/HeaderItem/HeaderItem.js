@@ -17,6 +17,7 @@ import images from '~/assets/images';
 import Tippy from '@tippyjs/react/headless';
 
 import ShopList from '~/components/ShopList';
+import Search from '~/components/Search';
 
 const SHOP_LIST = [
     {
@@ -24,6 +25,7 @@ const SHOP_LIST = [
         content: 'TOPS',
         icon: <FontAwesomeIcon icon={faAngleRight} />,
         flag: false,
+        to: '/en',
 
         children: [
             {
@@ -55,6 +57,8 @@ const SHOP_LIST = [
         content: 'BOTTOM',
         icon: <FontAwesomeIcon icon={faAngleRight} />,
         flag: false,
+        to: '/en',
+
         children: [
             {
                 id: 1,
@@ -69,6 +73,8 @@ const SHOP_LIST = [
         content: 'ACCESSORIES',
         icon: <FontAwesomeIcon icon={faAngleRight} />,
         flag: false,
+        to: '/en',
+
         children: [
             {
                 id: 1,
@@ -112,6 +118,7 @@ function HeaderItem() {
                         </Button>
                     </div>
                 </nav>
+                <Search />
             </div>
         </div>
     );

@@ -8,6 +8,7 @@ import Wrapper from '../Popper/Wrapper';
 import Button from '../Button';
 import Image from '~/components/Image';
 import images from '~/assets/images';
+import MenuItem from './MenuItem';
 
 const cx = classNames.bind(styles);
 
@@ -20,10 +21,11 @@ function ShopList({ children, item }) {
                 {value.map((dt, index) => {
                     return (
                         // <ShopList>
-                        <div className={cx('menu-list')}>
-                            <Button className={cx('custom')} rightIcon={dt.icon} key={index} to={dt.to}>
+                        <div className={cx('menu-list')} key={index}>
+                            {/* <Button className={cx('custom')} rightIcon={dt.icon} key={index} to={dt.to}>
                                 {dt.content}
-                            </Button>
+                            </Button> */}
+                            <MenuItem data={dt} />
                         </div>
                         // </ShopList>
                     );
@@ -34,12 +36,12 @@ function ShopList({ children, item }) {
 
     const renderResult = (attrs) => (
         <div tabIndex="-1" {...attrs}>
-            <Wrapper>{renderItems()}</Wrapper>
+            <Wrapper className={cx('margin-top-2px')}>{renderItems()}</Wrapper>
         </div>
     );
     return (
         <div>
-            <Tippy interactive visible render={renderResult} offset={[0, -1]} placement="bottom-start">
+            <Tippy interactive render={renderResult} offset={[0, 0]} placement="bottom-start">
                 {children}
             </Tippy>
         </div>

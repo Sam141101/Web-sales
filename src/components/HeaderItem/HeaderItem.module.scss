@@ -10,17 +10,18 @@
     // padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    display: flex;
 }
 
 .menu-list {
     display: flex;
     align-items: center;
+    width: 75%;
 }
 
 .menu-item {
     display: flex;
     align-items: center;
-    width: 75%;
 }
 
 .list-item {

@@ -9,18 +9,18 @@ import Wrapper from '../Popper/Wrapper';
 const cx = classNames.bind(styles);
 
 function MenuItem({ data }) {
-    const classes = cx('menu-item', {
-        green: data.green,
-    });
+    // const classes = cx('menu-item', {
+    //     green: data.green,
+    // });
 
     const renderItems = () => {
         return (
             <div className={cx('menu')}>
-                {data.map((dt, index) => {
+                {data.children.map((dt, index) => {
                     return (
                         // <ShopList>
-                        <div className={cx('menu-list')}>
-                            <Button className={cx('custom')} key={index} to={dt.to}>
+                        <div className={cx('menu-list')} key={index}>
+                            <Button className={cx('custom')} to={dt.to}>
                                 {dt.content}
                             </Button>
                         </div>
@@ -33,19 +33,17 @@ function MenuItem({ data }) {
 
     const renderResult = (attrs) => (
         <div tabIndex="-1" {...attrs}>
-            <Wrapper>{renderItems()}</Wrapper>
+            <Wrapper className={cx('margin-top-2px')}>{renderItems()}</Wrapper>
         </div>
     );
 
     return (
-        <Tippy interactive render={renderResult} offset={[0, -1]} placement="bottom-start">
-            <Button className={classes} rightIcon={data.icon} to={data.to}>
-                {data.content}
-            </Button>
-
-            {/* <Button className={cx('custom')} rightIcon={dt.icon} key={index} to={dt.to}>
-                                {dt.content}
-                            </Button> */}
+        <Tippy interactive render={renderResult} offset={[0, 0]} placement="right-start">
+            <div key={data.id}>
+                <Button className={cx('custom')} rightIcon={data.icon} key={data.id} to={data.to}>
+                    {data.content}
+                </Button>
+            </div>
         </Tippy>
     );
 }
