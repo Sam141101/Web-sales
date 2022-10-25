@@ -4,7 +4,8 @@
 }
 
 .search-results {
-    width: 341.5px;
+    // width: 341.5px;
+    width: auto;
 }
 
 .search {
@@ -85,3 +86,22 @@
     //     border-top: none;
     // }
 }
+
+.clear {
+    position: absolute;
+    right: 50px;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    margin: auto;
+    height: 90%;
+    padding: 0 15px 0 10px;
+    cursor: pointer;
+    color: #a7a7ab;
+    background: #fff;
+    // visibility: hidden;
+}
+
+// .clear-icon {
+//     color: #000;
+// }

@@ -41,18 +41,33 @@ const CLOTHERS_LIST = [
 ];
 
 function Search() {
+    const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
 
+    const [showResult, setShowResult] = useState(true);
+
+    const inputRef = useRef();
+
     useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([1, 2, 3]);
-        }, 3000);
+        // setTimeout(() => {
+        //     setSearchResult([1, 2, 3]);
+        // }, 3000);
     }, []);
+
+    const handleClear = () => {
+        setSearchResult([]);
+        setSearchValue('');
+        inputRef.current.focus();
+    };
+
+    const handleHideResult = () => {
+        setShowResult(false);
+    };
 
     return (
         <HeadlessTippy
             interactive
-            visible={searchResult.length > 0}
+            visible={showResult && searchResult.length > 0}
             placement="bottom-start"
             offset={[0, 0]}
             render={(attrs) => (
@@ -68,20 +83,24 @@ function Search() {
                     </Wrapper>
                 </div>
             )}
+            onClickOutside={handleHideResult}
         >
             <div className={cx('search')}>
                 <input
-                    // value={searchInput}
+                    value={searchValue}
                     placeholder="Tìm kiếm sản phẩm..."
-                    // onChange={e => setSearchInput(e.target.value)}
-                    // spellCheck={false}
-                    // onFocus={() => setShowResult(true)}
+                    onChange={(e) => setSearchValue(e.target.value)}
+                    spellCheck={false}
+                    ref={inputRef}
+                    onFocus={() => setShowResult(true)}
                     // ref={inputRef}
                 />
 
-                {/* <button className={cx('clear')} onClick={handleClear}>
-                <FontAwesomeIcon icon={faCircleXmark} />
-            </button> */}
+                {!!searchValue && (
+                    <button className={cx('clear')} onClick={handleClear}>
+                        <FontAwesomeIcon icon={faCircleXmark} />
+                    </button>
+                )}
 
                 <button className={cx('search-btn')}>
                     <FontAwesomeIcon className={cx('search-icon')} icon={faSearch} />
