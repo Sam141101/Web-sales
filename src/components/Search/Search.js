@@ -10,6 +10,7 @@ import { faCircleXmark, faSpinner, faSearch } from '@fortawesome/free-solid-svg-
 // import { SearchIcon } from '../Icon';
 import Wrapper from '../Popper/Wrapper';
 import ClothesItem from '~/components/ClothesItem';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -46,12 +47,14 @@ function Search() {
 
     const [showResult, setShowResult] = useState(true);
 
+    const flagSP = true;
+
     const inputRef = useRef();
 
     useEffect(() => {
         // setTimeout(() => {
         //     setSearchResult([1, 2, 3]);
-        // }, 3000);
+        // }, 0);
     }, []);
 
     const handleClear = () => {
@@ -80,6 +83,16 @@ function Search() {
                                 </div>
                             );
                         })}
+
+                        {flagSP ? (
+                            <div className={cx('resultsMore')}>
+                                <Button href="#">Xem thêm 73 sản phẩm</Button>
+                            </div>
+                        ) : (
+                            <div className={cx('resultsMore')}>
+                                <p>Không có sản phẩm nào...</p>
+                            </div>
+                        )}
                     </Wrapper>
                 </div>
             )}
