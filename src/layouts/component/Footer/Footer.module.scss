@@ -1,0 +1,71 @@
+.footer {
+    display: block;
+}
+
+// top-footer
+
+.top-footer {
+    background: #f3f3f3;
+    padding: 15px 0;
+}
+
+.number_phone {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    line-height: 21px;
+
+    a {
+        color: red;
+        font-size: 15px;
+        margin-left: 5px;
+    }
+
+    span {
+        margin-left: 8px;
+    }
+}
+
+.phone {
+    background-color: #000;
+    padding: 6px;
+    border-radius: 141px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-phone {
+    font-size: 12px;
+    color: #fff;
+}
+
+// main-footer
+.main-footer {
+    display: block;
+    visibility: visible;
+    padding: 40px 0 30px;
+    border-bottom: 1px solid #e7e7e7;
+    border-top: 1px solid #e7e7e7;
+}
+
+// footer 1
+.footer-content1 {
+    margin-bottom: 20px;
+}
+
+.footer-title {
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    margin: 0 0 20px;
+    position: relative;
+    line-height: 30px;
+    font-weight: 500;
+}
+
+.footer-content {
+    p {
+        margin: 0 0 10px 0;
+        line-height: 21px;
+    }
+}

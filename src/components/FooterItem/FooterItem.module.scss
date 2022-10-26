@@ -1,0 +1,35 @@
+.wrapper {
+    display: block;
+}
+
+.footer-title {
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    margin: 0 0 20px;
+    position: relative;
+    line-height: 30px;
+    font-weight: 500;
+}
+
+.footer-list {
+    margin-bottom: 15px;
+}
+
+.footer-block {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 18px;
+        height: 18px;
+        margin-right: 9px;
+    }
+}
+
+.item {
+    display: block;
+    line-height: 28px;
+    position: relative;
+    padding-left: 0px;
+    padding: 0;
+}
