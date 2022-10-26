@@ -6,6 +6,8 @@ import Image from '~/components/Image';
 import images from '~/assets/images';
 import ProductItem from '../ProductItem';
 
+import FakeSP from '~/FakeSP';
+
 const cx = classNames.bind(styles);
 
 function Product({ className, l24 }) {
@@ -14,14 +16,19 @@ function Product({ className, l24 }) {
 
     //     [className]: className,
     // });
+    const SP = FakeSP;
 
     return (
         <div className={cx('grid')}>
             <div className={cx('row', 'block')}>
                 {/* <div className={cx('clearfix')}> */}
-                <ProductItem l24 />
-                <ProductItem l24 />
+                {/* <ProductItem l24 />
+                <ProductItem l24 /> */}
                 {/* </div> */}
+
+                {SP.map((item) => {
+                    return <ProductItem key={item.id} data={item} l24 />;
+                })}
 
                 <div className={cx('product__seemore')}>
                     <Button href="/" className={cx('button-more', 'drak')}>

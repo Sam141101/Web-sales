@@ -7,8 +7,8 @@ import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
-function ProductItem({ className, l24 }) {
-    const SoldOut = true;
+function ProductItem({ className, l24, data }) {
+    const SoldOut = data.soldout;
 
     const classes = cx('col', {
         l24,
@@ -26,31 +26,29 @@ function ProductItem({ className, l24 }) {
                         </div>
                     ) : (
                         <div className={cx('product-sale')}>
-                            <span>-38%</span>
+                            {/* <span>-38%</span> */}
+                            <span>{data.sale}</span>
                         </div>
                     )}
 
-                    <Button to="/" className={cx('product-img-height')}>
-                        <Image
-                            src="https://product.hstatic.net/200000312481/product/1bccedc0-2012-4c10-a1a7-cf3a52bb8496_5ad10bdcb4174e1cb9b70ab184810945_grande.jpeg"
-                            className={cx('img-loop')}
-                        />
+                    <Button to={data.to} className={cx('product-img-height')}>
+                        <Image src={data.img} className={cx('img-loop')} />
                     </Button>
                 </div>
 
                 <div className={cx('product-detail')}>
                     <div className={cx('box-pro-detail')}>
                         <h3 className={cx('pro-name')}>
-                            <Button to="/" className={cx('pro-name-link')}>
-                                .SIGNATURE SEASON 2022 HOODIE / BLACK COLOR
+                            <Button to={data.to} className={cx('pro-name-link')}>
+                                {data.content}
                             </Button>
                         </h3>
 
                         <div className={cx('box-pro-prices')}>
                             <p className={cx('pro-price')}>
-                                <span className={cx('highlight')}>299,000₫</span>
+                                <span className={cx('highlight')}>{data.price}</span>
                                 <span className={cx('pro-price-del')}>
-                                    <del>480,000₫</del>
+                                    <del>{data.discount}</del>
                                 </span>
                             </p>
                         </div>
