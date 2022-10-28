@@ -4,14 +4,72 @@ import styles from './DetailProduct.module.scss';
 import { useRef, useState, useEffect } from 'react';
 
 import Image from '~/components/Image';
-// import images from '~/assets/images';
+import FakeImage from '~/FakeSP/FakeImage';
 // import Product from '~/components/Product';
 import FakeDetailProduct from '~/FakeSP/FakeDetailProduct';
 import SelectSize from '~/components/SelectSize';
 import SelectQuantity from '~/components/SelectQuantity';
 import DescribeProduct from '~/components/DescribeProduct';
+import Product from '~/components/Product';
 
 const cx = classNames.bind(styles);
+
+const FakeSP = [
+    {
+        id: 1,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp1,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 2,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp2,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 3,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp3,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 4,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp4,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 5,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp5,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+];
 
 function DetailProduct() {
     const fake = FakeDetailProduct;
@@ -84,7 +142,7 @@ function DetailProduct() {
                             </div>
 
                             <form>
-                                <div className={cx('clearfix')}>
+                                <div className={cx('')}>
                                     <div className={cx('swatch')}>
                                         <SelectSize />
                                     </div>
@@ -99,6 +157,14 @@ function DetailProduct() {
 
                             <DescribeProduct />
                         </div>
+                    </div>
+
+                    <div className={cx('list-productRelated')}>
+                        <div className={cx('heading-title')}>
+                            <h2>Sản phẩm liên quan</h2>
+                        </div>
+
+                        <Product flag={false} data={FakeSP} l24 />
                     </div>
                 </div>
             </div>

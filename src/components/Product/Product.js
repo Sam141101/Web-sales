@@ -10,13 +10,13 @@ import FakeSP from '~/FakeSP';
 
 const cx = classNames.bind(styles);
 
-function Product({ className, l24 }) {
+function Product({ className, l24, data, flag }) {
     // const classes = cx('col', {
     //     l24,
 
     //     [className]: className,
     // });
-    const SP = FakeSP;
+    const SP = data;
 
     return (
         <div className={cx('grid')}>
@@ -30,11 +30,13 @@ function Product({ className, l24 }) {
                     return <ProductItem key={item.id} data={item} l24 />;
                 })}
 
-                <div className={cx('product__seemore')}>
-                    <Button href="/" className={cx('button-more', 'drak')}>
-                        Xem thêm
-                    </Button>
-                </div>
+                {!!flag && (
+                    <div className={cx('product__seemore')}>
+                        <Button href="/" className={cx('button-more', 'drak')}>
+                            Xem thêm
+                        </Button>
+                    </div>
+                )}
             </div>
         </div>
     );

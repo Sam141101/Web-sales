@@ -6,9 +6,13 @@ import Image from '~/components/Image';
 import images from '~/assets/images';
 import Product from '~/components/Product';
 
+import FakeSP from '~/FakeSP';
+
 const cx = classNames.bind(styles);
 
 function Home() {
+    const flag = true;
+
     return (
         <main className={cx('wrapper')}>
             <Button to="/shop" className={cx('item')}>
@@ -28,7 +32,7 @@ function Home() {
 
                 <div className={cx('wrapper-collection-1')}>
                     <div className={cx('container-fluid')}>
-                        <Product l24 />
+                        <Product data={FakeSP} flag={flag} l24 />
                     </div>
                 </div>
             </section>
