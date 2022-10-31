@@ -19,6 +19,7 @@ function Button({
     className,
     children,
     onClick,
+    mb = false,
     ...passProps
 }) {
     let Comp = 'button';
@@ -44,36 +45,17 @@ function Button({
     });
 
     const title = cx('icon', {
-        // icon
+        mb,
     });
 
     return (
         <Comp className={classes} {...props}>
             {leftIcon && <span className={cx(title)}>{leftIcon}</span>}
             <span className={cx('title')}>{children}</span>
-            {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
+            {rightIcon && <span className={cx(title)}>{rightIcon}</span>}
             {flagTitle && <span className={title}>{flagTitle}</span>}
         </Comp>
     );
 }
 
 export default Button;
-
-// const Image = forwardRef(({ src, alt, className, fallback: customFallBack = images.noImage, ...props }, ref) => {
-//     const [fallback, setFallback] = useState('');
-
-//     const handleError = () => {
-//         setFallback(customFallBack);
-//     };
-
-//     return (
-//         <img
-//             className={classNames(styles.wrapper, className)}
-//             ref={ref}
-//             alt={alt}
-//             src={fallback || src}
-//             {...props}
-//             onError={handleError}
-//         />
-//     );
-// });

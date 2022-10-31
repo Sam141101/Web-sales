@@ -10,10 +10,10 @@ import FakeSP from '~/FakeSP';
 
 const cx = classNames.bind(styles);
 
-function Product({ className, l24, data, flag }) {
-    // const classes = cx('col', {
+function Product({ className, l24, data, flag, colpc }) {
+    // const classes = cx({
     //     l24,
-
+    //     // l3,
     //     [className]: className,
     // });
     const SP = data;
@@ -21,13 +21,8 @@ function Product({ className, l24, data, flag }) {
     return (
         <div className={cx('grid')}>
             <div className={cx('row', 'block')}>
-                {/* <div className={cx('clearfix')}> */}
-                {/* <ProductItem l24 />
-                <ProductItem l24 /> */}
-                {/* </div> */}
-
                 {SP.map((item) => {
-                    return <ProductItem key={item.id} data={item} l24 />;
+                    return <ProductItem key={item.id} data={item} colpc={colpc} />;
                 })}
 
                 {!!flag && (

@@ -7,17 +7,18 @@ import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
-function ProductItem({ className, l24, data }) {
+function ProductItem({ className, l24, data, colpc }) {
     const SoldOut = data.soldout;
 
     const classes = cx('col', {
-        l24,
+        // l24,
+        // colpc: colpc,
 
         [className]: className,
     });
 
     return (
-        <div className={classes}>
+        <div className={`col ${colpc}`}>
             <div className={cx('wrapper')}>
                 <div className={cx('product-img')}>
                     {SoldOut ? (

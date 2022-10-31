@@ -1,6 +1,8 @@
 import classNames from 'classnames/bind';
 import styles from './NavBar.module.scss';
 
+import { useState } from 'react';
+
 import Button from '~/components/Button';
 import Image from '~/components/Image';
 import images from '~/assets/images';
@@ -22,7 +24,9 @@ const contentBar = [
 
 const cx = classNames.bind(styles);
 
-function NavBar() {
+function NavBar({ data, customContent = contentBar }) {
+    const [content, setContent] = useState(customContent);
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container-fluid')}>
@@ -35,7 +39,7 @@ function NavBar() {
                                 </Button>
                             </li>
 
-                            {contentBar.map((item, index) => {
+                            {content.map((item, index) => {
                                 return (
                                     <li key={index} className={cx('content-item')}>
                                         <Button disabled={item.disabled} to={item.to} className={cx('item-link')}>

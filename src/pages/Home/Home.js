@@ -32,7 +32,7 @@ function Home() {
 
                 <div className={cx('wrapper-collection-1')}>
                     <div className={cx('container-fluid')}>
-                        <Product data={FakeSP} flag={flag} l24 />
+                        <Product data={FakeSP} flag={flag} colpc="l24" />
                     </div>
                 </div>
             </section>
