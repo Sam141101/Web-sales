@@ -79,6 +79,12 @@ textarea {
     color: inherit;
 }
 
+button {
+    &:disabled {
+        // display: none;
+    }
+}
+
 .clearfix {
     clear: both;
 }

@@ -7,11 +7,18 @@ import images from '~/assets/images';
 import Product from '~/components/Product';
 
 import FakeSP from '~/FakeSP';
+import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 function Home() {
     const flag = true;
+
+    const [postList, setPostList] = useState([]);
+
+    useEffect(() => {
+        setPostList(FakeSP);
+    }, []);
 
     return (
         <main className={cx('wrapper')}>
@@ -32,7 +39,7 @@ function Home() {
 
                 <div className={cx('wrapper-collection-1')}>
                     <div className={cx('container-fluid')}>
-                        <Product data={FakeSP} flag={flag} colpc="l24" />
+                        <Product data={postList} flag={flag} colpc="l24" />
                     </div>
                 </div>
             </section>

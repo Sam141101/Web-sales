@@ -10,10 +10,13 @@ import { faMinus } from '@fortawesome/free-solid-svg-icons';
 import Product from '~/components/Product';
 import NavBar from '~/components/NavBar';
 import DetailProduct from '~/components/DetailProduct';
-
 import BoxSidebar from '~/components/BoxSidebar';
 
+import { useEffect, useState } from 'react';
+
+import FakeImage from '~/FakeSP/FakeImage';
 import FakeSP from '~/FakeSP';
+import Pagination from '~/components/Pagination';
 
 const text = [
     {
@@ -94,10 +97,161 @@ const explorer = [
     },
 ];
 
+const FakeSP1 = [
+    {
+        id: 1,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp1,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 2,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp2,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 3,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp3,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 4,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp4,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 5,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp5,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 6,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp6,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 7,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp7,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 8,
+        soldout: true,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp8,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 9,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp9,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+
+    {
+        id: 10,
+        soldout: false,
+        sale: '-38%',
+        to: '/',
+        img: FakeImage.sp10,
+        price: '299,000₫',
+        discount: '480,000₫',
+        content: '.SIGNATURE SEASON 2022 HOODIE / BLACK COLOR',
+    },
+];
+
 const cx = classNames.bind(styles);
 
 function Shop() {
     const flag = false;
+
+    const [postList, setPostList] = useState([]);
+    const [pagination, setPagination] = useState({
+        page: 1,
+        limit: 15,
+        totalRows: 15,
+    });
+
+    const [filters, setFilters] = useState({
+        limit: 10,
+        page: 1,
+    });
+
+    console.log(pagination);
+
+    useEffect(() => {
+        let value;
+
+        if (filters.page > 1) {
+            value = FakeSP1;
+        } else {
+            value = FakeSP;
+        }
+
+        setPostList(value);
+        setPagination({
+            page: 2,
+            limit: 15,
+            totalRows: 25,
+        });
+    }, [filters]);
+
+    const handlePageChange = (newPage) => {
+        console.log('newPage :', newPage);
+        setFilters({
+            ...filters,
+            page: newPage,
+        });
+    };
 
     return (
         <div className={cx('wrapper')}>
@@ -136,7 +290,13 @@ function Shop() {
                             </div>
 
                             <div className={cx('wrapper-collection-1')}>
-                                <Product data={FakeSP} flag={flag} colpc="l3" />
+                                <Product data={postList} flag={flag} colpc="l3" />
+                            </div>
+
+                            <div className={cx('sort-page')}>
+                                <div className={cx('col', 'l12')}>
+                                    <Pagination pagination={pagination} onPageChange={handlePageChange} />
+                                </div>
                             </div>
                         </div>
                     </div>

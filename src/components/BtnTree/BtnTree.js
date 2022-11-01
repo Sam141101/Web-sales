@@ -36,8 +36,8 @@ function BtnTree({ explorer, className }) {
                     paddingLeft: 15,
                 }}
             >
-                {explorer.items.map((explore) => (
-                    <div className={cx('btn-tree-item')}>
+                {explorer.items.map((explore, index) => (
+                    <div key={index} className={cx('btn-tree-item')}>
                         <BtnTree key={explore.name} explorer={explore} />
                     </div>
                 ))}
